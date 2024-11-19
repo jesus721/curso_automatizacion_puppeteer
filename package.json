@@ -4,12 +4,19 @@
   "description": "Proyecto con los desafios del curso de automatización de puppeteer",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "iniciar": "node index.js",
+    "test": "mocha ./tests",
+    "pruebas": "node ./node_modules/mocha/bin/mocha --timeout=30000 ./tests",
+    "desafio1_ML": "node ./node_modules/mocha/bin/mocha --timeout=30000 ./tests/desafio1_ML.test.js",
+    "desafio1": "node ./node_modules/mocha/bin/mocha --timeout=30000 ./tests/desafio1.test.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "chai": "^5.1.2",
+    "mocha": "^10.8.2",
     "nodemon": "^3.1.7",
-    "prettier": "^3.3.3"
+    "prettier": "^3.3.3",
+    "puppeteer": "^23.8.0"
   }
 }
