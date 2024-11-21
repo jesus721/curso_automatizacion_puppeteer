@@ -7,16 +7,19 @@
     "iniciar": "node index.js",
     "test": "mocha ./tests",
     "pruebas": "node ./node_modules/mocha/bin/mocha --timeout=30000 ./tests",
+    "ejemplo": "node ./node_modules/mocha/bin/mocha --timeout=45000 ./tests/ejemplo.test.js",
+    "ejemplo2": "node ./node_modules/mocha/bin/mocha --timeout=30000 ./tests/ejemplo2.test.mjs",
     "desafio1_ML": "node ./node_modules/mocha/bin/mocha --timeout=30000 ./tests/desafio1_ML.test.js",
-    "desafio1": "node ./node_modules/mocha/bin/mocha --timeout=30000 ./tests/desafio1.test.js"
+    "desafio1": "node ./node_modules/mocha/bin/mocha --timeout=30000 ./tests/desafio1.test.js",
+    "desafio3": "node ./node_modules/mocha/bin/mocha --timeout=180000 ./tests/desafio3.test.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "chai": "^5.1.2",
+    "chai": "^4.5.0",
     "mocha": "^10.8.2",
     "nodemon": "^3.1.7",
     "prettier": "^3.3.3",
-    "puppeteer": "^23.8.0"
+    "puppeteer": "^23.7.0"
   }
 }

@@ -1,12 +1,11 @@
-const puppeteer = require('puppeteer')
-//const expect = require('chai').expect  // No funciona con CommonJS (require) en versiones mayores a chai 4.5.0, para versiones recientes es necesario que sea por import (ES Modules)
+import puppeteer from 'puppeteer'
+import { expect } from 'chai'
 
 /*
     NOTA IMPORTANTE:
-        - Para ejecutar este archivo, se debe ejecutar el siguiente comando: "node ./node_modules/mocha/bin/mocha --timeout=45000 ./tests/ejemplo.test.js" (o el script "npm run ejemplo")
-		- require('chai').expect no funciona con CommonJS (require) es necesario que sea por import (ES Modules)
+        - Para ejecutar este archivo, se debe ejecutar el siguiente comando:  npx mocha tests/ejemplo2.test.mjs (o npm run ejemplo2)
+        - Este archivo es una versión de ejemplo.test.js, pero en formato mjs
         - Para poder realizar el import en vez de require sin usar la extensión mjs, se debe de agregar al archivo package.json "type": "module"
-        - Realizando la modificación en el archivo package.json ya no funcionan los require, por lo que se debe de cambiar al formato de import
 */
 
 describe('Pruebas abriendo el navegador', () => {
@@ -103,7 +102,6 @@ describe('Pruebas abriendo el navegador', () => {
 
 	// 4ta. Sesión
 	/*it('4ta. Sesión - 1er. Ejemplo', async () => {
-		console.log('Dispositivos: ', puppeteer.devices)
 		const navegador = await puppeteer.launch({ headless: false })
 		const pagina = await navegador.newPage()
 		await pagina.goto('http://zero.webappsecurity.com/index.html')
@@ -112,9 +110,8 @@ describe('Pruebas abriendo el navegador', () => {
 		await pagina.keyboard.press('Enter', { delay: 100 })
 		await new Promise(r => setTimeout(r, 5000));
 		await navegador.close()
-	})*/
-	// expect de chai solo funciona con import, no con require al menos que se cuente con la versión 4.5.0 de chai
-	/*it('4ta. Sesión - 2do. Ejemplo', async () => {
+	})
+	it('4ta. Sesión - 2do. Ejemplo', async () => {
 		//navegador = await puppeteer.launch({ headless: false });
 		//pagina = await navegador.newPage();
 		//await pagina.goto('http://example.com')
@@ -130,8 +127,8 @@ describe('Pruebas abriendo el navegador', () => {
 		)
 		//await new Promise(r => setTimeout(r, 5000));
 		//await navegador.close()
-	})/*
-	/*it('4ta. Sesión - 3er. Ejemplo: Dimensiones del navegador', async () => {
+	})
+	it('4ta. Sesión - 3er. Ejemplo: Dimensiones del navegador', async () => {
         await pagina.setViewport({ width: 1920, height: 1080 })
         const titulo = await pagina.title()
 		const url = await pagina.url()
@@ -163,4 +160,5 @@ describe('Pruebas abriendo el navegador', () => {
 		console.log('Título:', titulo)
 		console.log('URL:', url)
 	})*/
+
 })
